@@ -7,7 +7,10 @@ orbs:
 # Orchestrate or schedule a set of jobs
   jobs:
     print_env:
-      -run: echo myname
+      docker:
+        -image:circleci/node:13.8.0
+      steps:    
+        -run: echo myname
 workflows:
   # Name the workflow "welcome"
   welcome:
